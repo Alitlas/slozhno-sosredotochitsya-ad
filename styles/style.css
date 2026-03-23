@@ -15,7 +15,7 @@
 /* Декоративный фон для текста */
 .title-decor {
   background-color: var(--accent-color);
-  color: var(--bg-color);
+  color: var(--text-color);
 }
 
 /* --- ШАПКА И ФУТЕР (Уголки и гриды) --- */
@@ -291,7 +291,7 @@
 
 @media (min-width: 768px) {
   .header {
-    padding: 20px;
+    /*padding: 20px;*/
   }
 }
 

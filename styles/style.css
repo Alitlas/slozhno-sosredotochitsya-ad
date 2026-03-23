@@ -323,17 +323,17 @@
 
 @media (min-width: 768px) {
   .header__description {
-    justify-self: end; /* На планшете и десктопе — вправо */
-    max-width: 364px;
+    justify-self: end;
+    width: 50%;
+    margin-block-end: 163px;
   }
 }
 
 @media (min-width: 1024px) {
   .header__description {
-    max-width: 491px;
+    margin-block-end: 114px;
   }
 }
-
 /* --- ФУТЕР --- */
 
 .footer {

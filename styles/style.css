@@ -186,9 +186,12 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .what {
-    max-width: 236px;
+    max-width: 236px;    
+  }
+  .section__title {
+    font-size: 18px;
   }
 }
 /* sec */
@@ -270,7 +273,7 @@
   }
 }
 
-/* --- КНОПКИ ПЕРЕКЛЮЧЕНИЯ ТЕМ --- */
+/* ПЕРЕКЛЮЧЕНИЕ ТЕМ */
 
 .header__theme-menu {
   align-self: start;
@@ -280,7 +283,7 @@
 
 .header__theme-menu-list {
   display: flex;
-  flex-direction: column; /* Выстраиваем кнопки вертикально */
+  flex-direction: column;
   gap: 10px;
 }
 
@@ -290,19 +293,26 @@
   }
 }
 
-/* @media (min-width: 1024px) {
+@media (min-width: 768px) {
   .header__theme-menu {
-    margin-block-start: 20px;
+    margin-top: 192px;
   }
-} */
+}
+
+@media (min-width: 375px) {
+  .header__theme-menu {
+    margin-top: 75px;
+  }
+}
 
 @media (min-width: 1024px) {
   .header__theme-menu {
-    justify-self: center; /* Центрируем меню на десктопе */
+    justify-self: center;
+    margin-top: 20px;    
   }
 
   .header__theme-menu-list {
-    flex-direction: row; /* Возвращаем кнопки в горизонтальную строку */
+    flex-direction: row;
   }
 }
 

@@ -19,6 +19,7 @@
 .title-decor {
   background-color: var(--accent-color);
   color: var(--text-color);
+  font-weight: bold;
 }
 
 .title-decor_not_bold {
@@ -185,7 +186,11 @@
   }
 }
 
-
+@media (min-width: 768px) {
+  .what {
+    max-width: 236px;
+  }
+}
 /* sec */
 
 
@@ -361,7 +366,7 @@
 @media (min-width: 375px) {
   .header__description {
     margin-block-end: 59px;
-    margin-right: 10px;
+    /* margin-right: 10px; */
   }
 }
 
@@ -387,9 +392,7 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-image: var(--bg-image);
-  background-size: cover;
-  background-position: center;
+  background-color: var(--bg-color);
 }
 
 .footer__title {

@@ -124,6 +124,10 @@
   margin-block-start: 10px;
 }
 
+.article__title {
+  font-size: 18px;
+}
+
 /* Ссылки в тексте */
 .article__text a {
   text-decoration: none;
@@ -156,6 +160,7 @@
   }
 
   .section__title {
+    font-size: 18px;
     grid-column: 1 / 2;
   }
 

@@ -78,7 +78,7 @@
   line-height: 82.5%;
 }
 
-/* --- МЕДИАЗАПРОСЫ (Адаптив) --- */
+/*МЕДИАЗАПРОСЫ (Адаптив)  */
 @media (min-width: 768px) {
   .header__title, .footer__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
@@ -100,7 +100,7 @@
   }
 }
 
-/* --- ОСНОВНОЙ КОНТЕНТ (Mobile First) --- */
+/* --- ОСНОВНОЙ КОНТЕНТ */
 .content {
   display: flex;
   flex-direction: column;
@@ -170,12 +170,18 @@
   }
 }
 
-/* --- АДАПТИВ: ДЕСКТОП (от 1024px) --- */
+/*АДАПТИВ: ДЕСКТОП (от 1024px) */
 @media (min-width: 1024px) {
-  .section:first-child .section__content,
-  .section:last-of-type .section__content {
+  /* Заголовок секции занимает ровно 315px, контент — всё остальное */
+  .section {
+    grid-template-columns: 315px 1fr;
+  }
+
+  /* Только первая секция имеет 2 колонки в контенте. 
+     Для :last-of-type правило удаляем, чтобы статьи шли списком */
+  .section:first-child .section__content {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
 }
@@ -279,60 +285,44 @@
 
 .header {
   display: grid;
-  grid-template-rows: auto auto 1fr auto;
-  align-items: start;
+  grid-template-rows: 1fr min-content 1fr; /* Секрет идеального центрирования */
   padding: 10px;
 }
 
 @media (min-width: 768px) {
   .header {
     padding: 20px;
-    grid-template-rows: auto 1fr auto;
   }
+}
+
+.header__theme-menu {
+  align-self: start;
+  justify-self: center;
+  margin-block-start: 20px;
 }
 
 .header__title {
   align-self: center;
-  margin-block: 0;
+  margin: 0;
+}
+
+
+.header__description {
+  align-self: end;
+  justify-self: start; /* На мобилке прижимаем влево */
+  margin: 0;
 }
 
 @media (min-width: 768px) {
-  .header__title {
-    margin-block: 0;
-  }
-}
-
-/* Блок с описанием */
-.header__description {
-  align-self: end;
-  color: #353430; /* Чёрный цвет для обеих тем */
-  margin-block-start: 0;
-  margin-block-end: 0;
-}
-
-/* Отступы для блока описания на разных экранах */
-@media (max-width: 767px) {
   .header__description {
-    margin-block-start: 50px;
-    margin-block-end: 40px;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-  .header__description {
-    margin-block-start: 100px;
-    margin-block-end: 40px;
+    justify-self: end; /* На планшете и десктопе — вправо */
     max-width: 364px;
-    justify-self: end;
   }
 }
 
 @media (min-width: 1024px) {
   .header__description {
-    margin-block-start: 120px;
-    margin-block-end: 40px;
     max-width: 491px;
-    justify-self: end;
   }
 }
 

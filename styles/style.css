@@ -162,26 +162,34 @@
   .section__content {
     grid-column: 2 / 3;
   }
-
-  .section:first-child .section__content {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
 }
 
 /*АДАПТИВ: ДЕСКТОП (от 1024px) */
+/* --- АДАПТИВ: ДЕСКТОП (от 1024px) --- */
 @media (min-width: 1024px) {
   /* Заголовок секции занимает ровно 315px, контент — всё остальное */
   .section {
     grid-template-columns: 315px 1fr;
   }
 
-  /* Только первая секция имеет 2 колонки в контенте. 
-     Для :last-of-type правило удаляем, чтобы статьи шли списком */
-  .section:first-child .section__content {
+  /* 1-я секция: 2 статьи = 2 колонки */
+  .section:nth-child(1) .section__content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* 2-я секция: 3 статьи = 3 колонки */
+  .section:nth-child(2) .section__content {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  /* 3-я секция: 5 статей = 1 колонка (списком) */
+  .section:nth-child(3) .section__content {
+    display: flex;
+    flex-direction: column;
     gap: 20px;
   }
 }

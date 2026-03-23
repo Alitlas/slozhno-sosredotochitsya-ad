@@ -8,9 +8,11 @@
 }
 
 .header {
+  display: grid;
   background-image: var(--bg-image);
   background-size: cover;
   background-position: center;
+  grid-template-rows: 1fr min-content 1fr;
 }
 
 /* Декоративный фон для текста */
@@ -324,13 +326,7 @@
   outline: 1px solid var(--menu-color);
 }
 
-/* --- ШАПКА: позиционирование элементов --- */
-
-.header {
-  display: grid;
-  grid-template-rows: 1fr min-content 1fr; /* Секрет идеального центрирования */
-  /*padding: 10px;*/
-}
+/* позиционирование шапки */
 
 @media (min-width: 768px) {
   .header {
@@ -379,7 +375,7 @@
     margin-right: 20px;
   }
 }
-/* --- ФУТЕР --- */
+/*  ФУТЕР */
 
 .footer {
   display: flex;

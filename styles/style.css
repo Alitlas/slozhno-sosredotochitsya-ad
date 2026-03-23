@@ -23,7 +23,7 @@
   position: relative;
   min-height: 100vh;
   display: grid;
-  padding: 10px;
+  /*padding: 10px;*/
 }
 
 /* Декоративные уголки */
@@ -84,7 +84,7 @@
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
   .decorated-zone {
-    padding: 20px;
+    /*padding: 20px;*/
   }
   .decorated-zone::before {
     top: 20px;
@@ -237,8 +237,15 @@
 /* --- КНОПКИ ПЕРЕКЛЮЧЕНИЯ ТЕМ --- */
 
 .header__theme-menu {
+  align-self: start;
+  justify-self: end; /* Прижимаем меню к правому краю */
   margin-block-start: 20px;
-  justify-self: center;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column; /* Выстраиваем кнопки вертикально */
+  gap: 10px;
 }
 
 @media (min-width: 768px) {
@@ -247,16 +254,20 @@
   }
 }
 
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
   .header__theme-menu {
     margin-block-start: 20px;
   }
-}
+} */
 
-.header__theme-menu-list {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
+@media (min-width: 1024px) {
+  .header__theme-menu {
+    justify-self: center; /* Центрируем меню на десктопе */
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row; /* Возвращаем кнопки в горизонтальную строку */
+  }
 }
 
 .header__theme-menu-button {
@@ -294,7 +305,7 @@
 .header {
   display: grid;
   grid-template-rows: 1fr min-content 1fr; /* Секрет идеального центрирования */
-  padding: 10px;
+  /*padding: 10px;*/
 }
 
 @media (min-width: 768px) {

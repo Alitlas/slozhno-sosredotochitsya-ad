@@ -172,26 +172,27 @@
 /*АДАПТИВ: ДЕСКТОП (от 1024px) */
 /* --- АДАПТИВ: ДЕСКТОП (от 1024px) --- */
 @media (min-width: 1024px) {
-  /* Заголовок секции занимает ровно 315px, контент — всё остальное */
   .section {
     grid-template-columns: 315px 1fr;
   }
 
-  /* 1-я секция: 2 статьи = 2 колонки */
+.section:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+  }
+
   .section:nth-child(1) .section__content {
     display: flex;
     flex-direction: column;
     gap: 20px;
   }
 
-  /* 2-я секция: 3 статьи = 3 колонки */
   .section:nth-child(2) .section__content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
 
-  /* 3-я секция: 5 статей = 1 колонка (списком) */
   .section:nth-child(3) .section__content {
     display: flex;
     flex-direction: column;
@@ -335,19 +336,26 @@
   align-self: end;
   justify-self: start; /* На мобилке прижимаем влево */
   margin: 0;
+  margin-right: 20;
+}
+
+@media (min-width: 375px) {
+  .header__description {
+    margin-block-end: 61px;
+  }
 }
 
 @media (min-width: 768px) {
   .header__description {
     justify-self: end;
     width: 50%;
-    margin-block-end: 163px;
+    margin-block-end: 168px;
   }
 }
 
 @media (min-width: 1024px) {
   .header__description {
-    margin-block-end: 114px;
+    margin-block-end: 119px;
   }
 }
 /* --- ФУТЕР --- */

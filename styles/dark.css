@@ -6,3 +6,13 @@
   --title-color: #DB00FF;
   --bg-image: url('../images/cover-image-dark.png');
 }
+
+:root.theme-dark .section__title {
+  color: #FF0070;
+}
+
+@media (prefers-color-scheme: dark) {
+  .section__title {
+    color: #FF0070;
+  }
+}
